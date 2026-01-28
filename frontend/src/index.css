@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-diane-bg text-gray-100 font-sans antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-diane-surface;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-diane-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-diane-mute;
+}

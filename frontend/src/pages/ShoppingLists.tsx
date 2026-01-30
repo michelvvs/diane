@@ -96,13 +96,13 @@ function ItemRow({
           value={editName}
           onChange={(e) => setEditName(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSaveEdit()}
-          className="flex-1 rounded-lg bg-diane-bg border border-diane-border px-3 py-1.5 text-sm text-gray-100"
+          className="flex-1 rounded-lg bg-diane-bg border border-diane-border px-3 py-1.5 text-sm text-diane-cream"
           autoFocus
         />
         <button
           type="button"
           onClick={handleSaveEdit}
-          className="rounded-lg px-2 py-1 text-sm bg-diane-accent text-diane-bg"
+          className="rounded-lg px-2 py-1 text-sm bg-diane-accent text-diane-cream"
         >
           Salvar
         </button>
@@ -131,7 +131,7 @@ function ItemRow({
           className={
             item.checked
               ? 'text-diane-mute line-through'
-              : 'text-gray-200'
+              : 'text-diane-cream'
           }
         >
           {item.name}
@@ -141,7 +141,7 @@ function ItemRow({
         <button
           type="button"
           onClick={() => { setEditName(item.name); setEditing(true); }}
-          className="rounded px-2 py-1 text-xs text-diane-mute hover:bg-diane-border hover:text-gray-200"
+          className="rounded px-2 py-1 text-xs text-diane-mute hover:bg-diane-border hover:text-diane-cream"
         >
           Editar
         </button>
@@ -271,8 +271,8 @@ export default function ShoppingLists() {
 
   return (
     <div className="p-6 max-w-3xl">
-      <h1 className="text-2xl font-semibold">Listas de compras</h1>
-      <p className="text-diane-mute mt-1">
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">Listas de compras</h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">
         Crie listas no chat (&quot;cria uma lista&quot;, &quot;cria lista com leite e pão&quot;, &quot;adiciona X&quot;, &quot;peguei o X&quot;) ou edite aqui.
       </p>
 
@@ -286,13 +286,13 @@ export default function ShoppingLists() {
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
           placeholder="Nome da lista"
-          className="flex-1 rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent"
+          className="flex-1 rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent"
           disabled={creating}
         />
         <button
           type="submit"
           disabled={creating}
-          className="rounded-xl bg-diane-accent text-diane-bg px-4 py-2 font-medium hover:bg-diane-accentDim disabled:opacity-50"
+          className="rounded-xl bg-diane-accent text-diane-cream px-4 py-2 font-medium hover:bg-diane-accentDim disabled:opacity-50"
         >
           Nova lista
         </button>
@@ -303,7 +303,7 @@ export default function ShoppingLists() {
           <p className="font-medium text-diane-accent">
             Lista &quot;{lastAddResult.name}&quot;. Estado atual:
           </p>
-          <p className="mt-1 text-sm text-gray-300 whitespace-pre-wrap">
+          <p className="mt-1 text-sm text-diane-cream whitespace-pre-wrap">
             {lastAddResult.items.length
               ? lastAddResult.items.map((it) => `  [${it.checked ? 'x' : ' '}] ${it.name}`).join('\n')
               : '(nenhum item)'}
@@ -311,7 +311,7 @@ export default function ShoppingLists() {
           <button
             type="button"
             onClick={() => setLastAddResult(null)}
-            className="mt-2 text-xs text-diane-mute hover:text-gray-300"
+            className="mt-2 text-xs text-diane-mute hover:text-diane-cream"
           >
             Fechar
           </button>
@@ -333,13 +333,13 @@ export default function ShoppingLists() {
                       value={editListName}
                       onChange={(e) => setEditListName(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && saveEditList()}
-                      className="flex-1 rounded-lg bg-diane-bg border border-diane-border px-3 py-1.5 text-gray-100"
+                      className="flex-1 rounded-lg bg-diane-bg border border-diane-border px-3 py-1.5 text-diane-cream"
                       autoFocus
                     />
                     <button
                       type="button"
                       onClick={saveEditList}
-                      className="rounded-lg px-2 py-1 text-sm bg-diane-accent text-diane-bg"
+                      className="rounded-lg px-2 py-1 text-sm bg-diane-accent text-diane-cream"
                     >
                       Salvar
                     </button>
@@ -377,7 +377,7 @@ export default function ShoppingLists() {
                   <button
                     type="button"
                     onClick={() => startEditList(list)}
-                    className="rounded-lg px-3 py-1.5 text-sm text-diane-mute hover:bg-diane-border hover:text-gray-200"
+                    className="rounded-lg px-3 py-1.5 text-sm text-diane-mute hover:bg-diane-border hover:text-diane-cream"
                   >
                     Editar nome
                   </button>
@@ -423,7 +423,7 @@ export default function ShoppingLists() {
                     e.key === 'Enter' && (e.preventDefault(), handleAddItems(list.id))
                   }
                   placeholder="Adicionar itens (separados por vírgula)"
-                  className="flex-1 rounded-lg bg-diane-bg border border-diane-border px-3 py-2 text-sm text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-1 focus:ring-diane-accent"
+                  className="flex-1 rounded-lg bg-diane-bg border border-diane-border px-3 py-2 text-sm text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-1 focus:ring-diane-accent"
                 />
                 <button
                   type="button"

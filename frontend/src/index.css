@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-diane-bg text-gray-100 font-sans antialiased;
+  @apply bg-diane-bg text-diane-cream font-sans antialiased;
 }
 
 ::-webkit-scrollbar {
@@ -14,8 +14,8 @@ body {
   @apply bg-diane-surface;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-diane-border rounded-full;
+  @apply bg-diane-lodge rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-diane-mute;
+  @apply bg-diane-accent;
 }

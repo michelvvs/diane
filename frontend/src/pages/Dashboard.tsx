@@ -53,28 +53,30 @@ export default function Dashboard() {
 
   return (
     <div className="p-6 max-w-4xl">
-      <h1 className="text-2xl font-semibold">Visão geral</h1>
-      <p className="text-diane-mute mt-1">
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">
+        The owls
+      </h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">
         Saldo total = soma (saldo inicial − gastos) de cada conta
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        <div className="rounded-2xl bg-diane-surface border border-diane-border p-6">
-          <h2 className="text-sm font-medium text-diane-mute uppercase tracking-wider">
+        <div className="rounded-2xl bg-diane-surface border border-diane-border p-6 bg-gradient-to-br from-diane-lodge/10 to-transparent">
+          <h2 className="text-sm font-medium text-diane-mute uppercase tracking-wider font-mono">
             Saldo total
           </h2>
-          <p className="mt-2 text-2xl font-semibold text-diane-accent">
+          <p className="mt-2 font-display text-2xl font-semibold text-diane-accent">
             {fmtBrl(totalBalance)}
           </p>
           <p className="mt-1 text-sm text-diane-mute">
             {accounts.length} conta(s) · saldo efetivo (inicial − gastos)
           </p>
         </div>
-        <div className="rounded-2xl bg-diane-surface border border-diane-border p-6">
-          <h2 className="text-sm font-medium text-diane-mute uppercase tracking-wider">
+        <div className="rounded-2xl bg-diane-surface border border-diane-border p-6 bg-gradient-to-br from-diane-lodge/10 to-transparent">
+          <h2 className="text-sm font-medium text-diane-mute uppercase tracking-wider font-mono">
             Gastos no mês {stats ? `${stats.month.toString().padStart(2, '0')}/${stats.year}` : ''}
           </h2>
-          <p className="mt-2 text-2xl font-semibold">
+          <p className="mt-2 font-display text-2xl font-semibold text-diane-cream">
             {stats ? fmtBrl(stats.total) : 'R$ 0,00'}
           </p>
           <p className="mt-1 text-sm text-diane-mute">
@@ -84,9 +86,9 @@ export default function Dashboard() {
       </div>
 
       <section className="mt-8">
-        <h2 className="text-lg font-medium">Contas</h2>
+        <h2 className="font-display text-lg font-medium text-diane-cream">Contas</h2>
         {accounts.length === 0 ? (
-          <p className="text-diane-mute mt-2">
+          <p className="text-diane-mute mt-2 font-mono text-sm">
             Nenhuma conta cadastrada. Crie em Contas ou pelo chat.
           </p>
         ) : (
@@ -94,7 +96,7 @@ export default function Dashboard() {
             {accounts.map((a) => (
               <li
                 key={a.id}
-                className="flex justify-between items-center rounded-xl bg-diane-surface border border-diane-border px-4 py-3"
+                className="flex justify-between items-center rounded-xl bg-diane-surface border border-diane-border px-4 py-3 text-diane-cream"
               >
                 <div>
                   <span>{a.name}</span>

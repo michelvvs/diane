@@ -97,8 +97,8 @@ export default function Accounts() {
 
   return (
     <div className="p-6 max-w-2xl">
-      <h1 className="text-2xl font-semibold">Contas</h1>
-      <p className="text-diane-mute mt-1">
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">Contas</h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">
         Saldo efetivo = saldo inicial − gastos da conta
       </p>
 
@@ -112,7 +112,7 @@ export default function Accounts() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Nome da conta"
-          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent"
+          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent"
           disabled={creating}
         />
         <input
@@ -120,13 +120,13 @@ export default function Accounts() {
           value={balance}
           onChange={(e) => setBalance(e.target.value)}
           placeholder="Saldo inicial"
-          className="w-36 rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent"
+          className="w-36 rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent"
           disabled={creating}
         />
         <button
           type="submit"
           disabled={creating || !name.trim()}
-          className="rounded-xl bg-diane-accent text-diane-bg px-4 py-2 font-medium hover:bg-diane-accentDim disabled:opacity-50"
+          className="rounded-xl bg-diane-accent text-diane-cream px-4 py-2 font-medium hover:bg-diane-accentDim disabled:opacity-50"
         >
           Adicionar
         </button>
@@ -146,26 +146,26 @@ export default function Accounts() {
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
                   placeholder="Nome"
-                  className="flex-1 min-w-32 rounded-lg bg-diane-bg border border-diane-border px-3 py-2 text-gray-100"
+                  className="flex-1 min-w-32 rounded-lg bg-diane-bg border border-diane-border px-3 py-2 text-diane-cream"
                 />
                 <input
                   type="text"
                   value={editBalance}
                   onChange={(e) => setEditBalance(e.target.value)}
                   placeholder="Saldo inicial"
-                  className="w-28 rounded-lg bg-diane-bg border border-diane-border px-3 py-2 text-gray-100"
+                  className="w-28 rounded-lg bg-diane-bg border border-diane-border px-3 py-2 text-diane-cream"
                 />
                 <button
                   type="button"
                   onClick={submitEdit}
-                  className="rounded-lg bg-diane-accent text-diane-bg px-3 py-2 text-sm font-medium"
+                  className="rounded-lg bg-diane-accent text-diane-cream px-3 py-2 text-sm font-medium"
                 >
                   Salvar
                 </button>
                 <button
                   type="button"
                   onClick={cancelEdit}
-                  className="rounded-lg bg-diane-border text-gray-300 px-3 py-2 text-sm"
+                  className="rounded-lg bg-diane-border text-diane-cream px-3 py-2 text-sm"
                 >
                   Cancelar
                 </button>
@@ -188,7 +188,7 @@ export default function Accounts() {
                   <button
                     type="button"
                     onClick={() => startEdit(a)}
-                    className="rounded-lg px-2 py-1 text-diane-mute hover:bg-diane-border hover:text-gray-200 text-sm"
+                    className="rounded-lg px-2 py-1 text-diane-mute hover:bg-diane-border hover:text-diane-cream text-sm"
                     title="Editar"
                   >
                     Editar

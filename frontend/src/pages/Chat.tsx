@@ -52,20 +52,23 @@ export default function Chat() {
 
   return (
     <div className="h-screen flex flex-col">
-      <header className="shrink-0 border-b border-diane-border px-6 py-4">
-        <h1 className="text-xl font-semibold">Chat com a DIANE</h1>
-        <p className="text-sm text-diane-mute mt-0.5">
-          Gastos, saldo, categorias, listas de compras ou preços por mercado: &quot;cria lista&quot;, &quot;adiciona leite&quot;, &quot;peguei o leite&quot;, &quot;leite piracanjuba no guanabara 5,90&quot;.
+      <header className="shrink-0 border-b border-diane-border px-6 py-4 bg-gradient-to-r from-diane-lodge/10 to-transparent">
+        <h1 className="font-display text-xl font-semibold text-diane-cream">
+          Damn fine chat
+        </h1>
+        <p className="text-sm text-diane-mute mt-0.5 font-mono">
+          Diane… gastos, saldo, categorias, listas, preços. &quot;Cria lista&quot;, &quot;adiciona leite&quot;, &quot;peguei o leite&quot;, &quot;leite piracanjuba no guanabara 5,90&quot;.
         </p>
       </header>
 
       <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
         {messages.length === 0 && (
           <div className="max-w-2xl mx-auto text-center text-diane-mute py-12">
-            <p className="text-lg">Olá! Sou a DIANE.</p>
-            <p className="mt-2">
-              Ex.: &ldquo;Gastei 50 no mercado&rdquo;, &ldquo;Quanto gastei este mês?&rdquo;, &ldquo;Cria uma lista&rdquo;, &ldquo;Adiciona café&rdquo;, &ldquo;Peguei o leite&rdquo;, &ldquo;Preço do leite Piracanjuba no Guanabara tá 5,90&rdquo;.
+            <p className="font-display text-lg text-diane-cream">Olá. Sou a DIANE.</p>
+            <p className="mt-2 font-mono text-sm">
+              Ex.: &ldquo;Gastei 50 no mercado&rdquo;, &ldquo;Quanto gastei este mês?&rdquo;, &ldquo;Cria lista com leite e pão&rdquo;, &ldquo;Adiciona café&rdquo;, &ldquo;Peguei o leite&rdquo;, &ldquo;Preço do leite no Guanabara 5,90&rdquo;.
             </p>
+            <p className="mt-4 text-xs text-diane-mute/80">☕ Every day, once a day…</p>
           </div>
         )}
         {messages.map((m, i) => (
@@ -76,16 +79,16 @@ export default function Chat() {
             <div
               className={`rounded-2xl px-4 py-3 ${
                 m.role === 'user'
-                  ? 'bg-diane-accent/20 text-diane-accent'
+                  ? 'bg-diane-accent/20 text-diane-cream border border-diane-accent/50'
                   : m.errorType === 'quota'
-                    ? 'bg-diane-surface border-2 border-amber-500/80 text-amber-200'
+                    ? 'bg-diane-surface border-2 border-diane-warn/60 text-diane-warn'
                     : m.errorType
-                      ? 'bg-diane-surface border border-diane-danger/60 text-diane-danger/90'
-                      : 'bg-diane-surface border border-diane-border'
+                      ? 'bg-diane-surface border border-diane-danger/60 text-diane-danger'
+                      : 'bg-diane-surface border border-diane-border text-diane-cream'
               }`}
             >
               {m.role === 'assistant' && m.errorType === 'quota' && (
-                <p className="text-xs font-medium text-amber-400 mb-2">Aviso — Cota excedida</p>
+                <p className="text-xs font-medium text-diane-warn mb-2">Aviso — Cota excedida</p>
               )}
               {m.role === 'assistant' && m.errorType === 'llm' && (
                 <p className="text-xs font-medium text-diane-danger mb-2">Erro na IA</p>
@@ -106,27 +109,27 @@ export default function Chat() {
         {loading && (
           <div className="max-w-2xl">
             <div className="rounded-2xl px-4 py-3 bg-diane-surface border border-diane-border">
-              <span className="text-diane-mute animate-pulse">…</span>
+              <span className="text-diane-mute animate-pulse font-mono">…</span>
             </div>
           </div>
         )}
         <div ref={bottomRef} />
       </div>
 
-      <form onSubmit={handleSubmit} className="shrink-0 border-t border-diane-border p-4">
+      <form onSubmit={handleSubmit} className="shrink-0 border-t border-diane-border p-4 bg-diane-surface/30">
         <div className="max-w-2xl mx-auto flex gap-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Mensagem para a DIANE…"
-            className="flex-1 rounded-xl bg-diane-surface border border-diane-border px-4 py-3 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent focus:border-transparent"
+            placeholder="Diane…"
+            className="flex-1 rounded-xl bg-diane-surface border border-diane-border px-4 py-3 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent focus:border-transparent font-mono text-sm"
             disabled={loading}
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="rounded-xl bg-diane-accent text-diane-bg px-5 py-3 font-medium hover:bg-diane-accentDim disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+            className="rounded-xl bg-diane-accent text-diane-cream px-5 py-3 font-medium hover:bg-diane-accentDim disabled:opacity-50 disabled:cursor-not-allowed transition-opacity border border-diane-accentDim/50"
           >
             Enviar
           </button>

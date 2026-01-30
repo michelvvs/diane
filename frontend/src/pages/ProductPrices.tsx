@@ -91,7 +91,7 @@ function ItemRow({
           onChange={(e) => setEditName(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSave()}
           placeholder="Produto"
-          className="flex-1 rounded-lg bg-diane-surface border border-diane-border px-3 py-1.5 text-sm text-gray-100"
+          className="flex-1 rounded-lg bg-diane-surface border border-diane-border px-3 py-1.5 text-sm text-diane-cream"
         />
         <input
           type="text"
@@ -100,13 +100,13 @@ function ItemRow({
           onChange={(e) => setEditPrice(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSave()}
           placeholder="Preço"
-          className="w-24 rounded-lg bg-diane-surface border border-diane-border px-3 py-1.5 text-sm text-gray-100"
+          className="w-24 rounded-lg bg-diane-surface border border-diane-border px-3 py-1.5 text-sm text-diane-cream"
         />
         <button
           type="button"
           onClick={handleSave}
           disabled={loading}
-          className="rounded-lg px-2 py-1 text-sm bg-diane-accent text-diane-bg"
+          className="rounded-lg px-2 py-1 text-sm bg-diane-accent text-diane-cream"
         >
           Salvar
         </button>
@@ -128,7 +128,7 @@ function ItemRow({
   return (
     <div className="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-diane-border/30 group">
       <div className="flex-1 min-w-0 flex items-center gap-2">
-        <span className="text-gray-200 truncate">{item.product_name}</span>
+        <span className="text-diane-cream truncate">{item.product_name}</span>
         {item.is_best_price && (
           <span className="shrink-0 rounded px-1.5 py-0.5 text-xs font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
             Melhor preço
@@ -146,7 +146,7 @@ function ItemRow({
             setEditing(true)
             onErr('')
           }}
-          className="rounded px-2 py-1 text-xs text-diane-mute hover:bg-diane-border hover:text-gray-200"
+          className="rounded px-2 py-1 text-xs text-diane-mute hover:bg-diane-border hover:text-diane-cream"
         >
           Editar
         </button>
@@ -246,8 +246,8 @@ export default function ProductPrices() {
 
   return (
     <div className="p-6 max-w-4xl">
-      <h1 className="text-2xl font-semibold">Preços por estabelecimento</h1>
-      <p className="text-diane-mute mt-1">
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">Preços por estabelecimento</h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">
         Consulte e edite preços cadastrados no chat ou aqui. Itens com melhor preço entre os mercados ganham badge.
       </p>
 
@@ -259,7 +259,7 @@ export default function ProductPrices() {
           value={newProduct}
           onChange={(e) => setNewProduct(e.target.value)}
           placeholder="Produto"
-          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent min-w-[140px]"
+          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent min-w-[140px]"
           disabled={creating}
         />
         <input
@@ -268,7 +268,7 @@ export default function ProductPrices() {
           onChange={(e) => setNewMarket(e.target.value)}
           placeholder="Estabelecimento"
           list="markets-list"
-          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent min-w-[140px]"
+          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent min-w-[140px]"
           disabled={creating}
         />
         <datalist id="markets-list">
@@ -282,13 +282,13 @@ export default function ProductPrices() {
           value={newPrice}
           onChange={(e) => setNewPrice(e.target.value)}
           placeholder="Preço"
-          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-gray-100 placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent w-28"
+          className="rounded-xl bg-diane-surface border border-diane-border px-4 py-2 text-diane-cream placeholder-diane-mute focus:outline-none focus:ring-2 focus:ring-diane-accent w-28"
           disabled={creating}
         />
         <button
           type="submit"
           disabled={creating}
-          className="rounded-xl bg-diane-accent text-diane-bg px-4 py-2 font-medium hover:bg-diane-accentDim disabled:opacity-50"
+          className="rounded-xl bg-diane-accent text-diane-cream px-4 py-2 font-medium hover:bg-diane-accentDim disabled:opacity-50"
         >
           Adicionar
         </button>

@@ -28,14 +28,14 @@ export default function Stats() {
 
   return (
     <div className="p-6 max-w-2xl">
-      <h1 className="text-2xl font-semibold">Por categoria</h1>
-      <p className="text-diane-mute mt-1">Gastos do mês por categoria</p>
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">Cherry pie</h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">Gastos do mês por categoria</p>
 
       <div className="mt-4 flex flex-wrap gap-2">
         <select
           value={year}
           onChange={(e) => setYear(Number(e.target.value))}
-          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-gray-100"
+          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-diane-cream"
         >
           {years.map((y) => (
             <option key={y} value={y}>{y}</option>
@@ -44,7 +44,7 @@ export default function Stats() {
         <select
           value={month}
           onChange={(e) => setMonth(Number(e.target.value))}
-          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-gray-100"
+          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-diane-cream"
         >
           {months.map((m) => (
             <option key={m} value={m}>
@@ -71,13 +71,13 @@ export default function Stats() {
               return (
                 <li
                   key={c.category_name}
-                  className="flex justify-between items-center rounded-xl bg-diane-surface border border-diane-border px-4 py-3"
+                  className="flex justify-between items-center rounded-xl bg-diane-surface border border-diane-border px-4 py-3 text-diane-cream"
                 >
                   <div className="flex-1 min-w-0">
                     <span>{c.category_name}</span>
                     <span className="ml-2 text-diane-mute text-sm">{pct.toFixed(0)}%</span>
                   </div>
-                  <span className="font-mono shrink-0 ml-2">{fmtBrl(c.total)}</span>
+                  <span className="font-mono shrink-0 ml-2 text-diane-accent">{fmtBrl(c.total)}</span>
                 </li>
               )
             })}

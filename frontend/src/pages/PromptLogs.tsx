@@ -48,7 +48,7 @@ function LogRow({ log }: { log: PromptLog }) {
             <p className="text-xs font-medium text-diane-mute uppercase tracking-wider mb-1">
               Prompt
             </p>
-            <pre className="text-sm bg-diane-bg rounded-lg p-3 overflow-x-auto max-h-48 overflow-y-auto whitespace-pre-wrap break-words">
+            <pre className="text-sm bg-diane-bg text-diane-cream font-mono rounded-lg p-3 overflow-x-auto max-h-48 overflow-y-auto whitespace-pre-wrap break-words">
               {log.prompt_text}
             </pre>
           </div>
@@ -56,7 +56,7 @@ function LogRow({ log }: { log: PromptLog }) {
             <p className="text-xs font-medium text-diane-mute uppercase tracking-wider mb-1">
               Resposta
             </p>
-            <pre className="text-sm bg-diane-bg rounded-lg p-3 overflow-x-auto max-h-48 overflow-y-auto whitespace-pre-wrap break-words">
+            <pre className="text-sm bg-diane-bg text-diane-cream font-mono rounded-lg p-3 overflow-x-auto max-h-48 overflow-y-auto whitespace-pre-wrap break-words">
               {log.response_text}
             </pre>
           </div>
@@ -95,8 +95,8 @@ export default function PromptLogs() {
 
   return (
     <div className="p-6 max-w-4xl">
-      <h1 className="text-2xl font-semibold">Log de prompts</h1>
-      <p className="text-diane-mute mt-1">
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">Tape log</h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">
         Histórico de prompts enviados ao modelo (extração de transação, lista, chat).
       </p>
 
@@ -108,7 +108,7 @@ export default function PromptLogs() {
         <select
           value={kind}
           onChange={(e) => setKind(e.target.value)}
-          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-gray-100"
+          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-diane-cream font-mono text-sm"
         >
           <option value="">Todos</option>
           <option value="extraction_tx">Extração (transação)</option>

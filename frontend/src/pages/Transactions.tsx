@@ -39,14 +39,14 @@ export default function Transactions() {
 
   return (
     <div className="p-6 max-w-4xl">
-      <h1 className="text-2xl font-semibold">Transações</h1>
-      <p className="text-diane-mute mt-1">Histórico de gastos e receitas</p>
+      <h1 className="font-display text-2xl font-semibold text-diane-cream">Transações</h1>
+      <p className="text-diane-mute mt-1 font-mono text-sm">Histórico de gastos e receitas</p>
 
       <div className="mt-4 flex flex-wrap gap-2">
         <select
           value={year}
           onChange={(e) => setYear(e.target.value ? Number(e.target.value) : '')}
-          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-gray-100"
+          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-diane-cream"
         >
           <option value="">Todos os anos</option>
           {years.map((y) => (
@@ -56,7 +56,7 @@ export default function Transactions() {
         <select
           value={month}
           onChange={(e) => setMonth(e.target.value ? Number(e.target.value) : '')}
-          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-gray-100"
+          className="rounded-lg bg-diane-surface border border-diane-border px-3 py-2 text-diane-cream"
         >
           <option value="">Todos os meses</option>
           {months.map((m) => (
@@ -82,12 +82,12 @@ export default function Transactions() {
             </thead>
             <tbody>
               {txs.map((t) => (
-                <tr key={t.id} className="border-b border-diane-border/50">
+                <tr key={t.id} className="border-b border-diane-border/50 text-diane-cream">
                   <td className="py-3 pr-4 font-mono">{fmtDate(t.tx_date)}</td>
                   <td className="py-3 pr-4">{t.description}</td>
                   <td className="py-3 pr-4">{t.category_name ?? '—'}</td>
                   <td className="py-3 pr-4">{t.account_name ?? '—'}</td>
-                  <td className="py-3 text-right font-mono">{fmtBrl(t.amount)}</td>
+                  <td className="py-3 text-right font-mono text-diane-accent">{fmtBrl(t.amount)}</td>
                 </tr>
               ))}
             </tbody>
